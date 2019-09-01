@@ -1,0 +1,31 @@
+.view {
+	position: relative;
+	z-index: 1;
+	&.hidden{
+		overflow: hidden;
+		height: 100%;
+	}
+	.item {
+		position: absolute;
+		right: 0;
+		left: 0;
+		transition: transform 0.5s, opacity 0.5s;
+		&.item-appear {
+			opacity: 0;
+			transform: translate3d(150%, 0, 0);
+		}
+		&.item-appear.item-appear-active {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+		&.item-leave {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+
+		&.item-leave.item-leave-active {
+			opacity: 0;
+			transform: translate3d(-150%, 0, 0);
+		}
+	}
+}
